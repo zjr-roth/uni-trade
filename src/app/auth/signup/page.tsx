@@ -1,13 +1,14 @@
-import React from "react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+"use client";
 
-const signup = () => {
-	return (
-		<div>
-			<h1>Connect Your wallet</h1>
-			<ConnectButton />
-		</div>
-	);
-};
+import { SignUpForm } from "../../components/authentication/SignUpForm";
+import { useRouter } from "next/navigation";
 
-export default signup;
+export default function SignUpPage() {
+	const router = useRouter();
+
+	const handleToggleMode = () => {
+		router.push("/auth/login");
+	};
+
+	return <SignUpForm onToggleMode={handleToggleMode} />;
+}

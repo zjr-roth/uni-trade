@@ -14,22 +14,16 @@ export default function Navbar() {
 					<div className="hidden md:block">
 						<div className="ml-10 flex items-baseline space-x-4">
 							<a
-								href="/"
+								href="/auth/login"
 								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 							>
-								Home
+								Login
 							</a>
 							<a
-								href="/about"
-								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+								href="/auth/signup"
+								className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105"
 							>
-								About
-							</a>
-							<a
-								href="/contact"
-								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-							>
-								Contact
+								Sign Up
 							</a>
 						</div>
 					</div>
