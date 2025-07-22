@@ -22,27 +22,6 @@ export function ProfilePage() {
 		vaultsJoined: 3,
 	};
 
-	const walletConnections = [
-		{
-			network: "Ethereum",
-			address: "0x742d35Cc6Bf8b1...9c5f3ec85f",
-			balance: "2.345 ETH",
-			status: "Connected",
-		},
-		{
-			network: "Bitcoin",
-			address: "BC1qxy2kgdygjr...h0h8c3t2",
-			balance: "0.0234 BTC",
-			status: "Connected",
-		},
-		{
-			network: "Solana",
-			address: "Not connected",
-			balance: "-",
-			status: "Not connected",
-		},
-	];
-
 	const [notificationSettings, setNotificationSettings] = useState([
 		{
 			id: "tradeConfirmations",
@@ -150,49 +129,6 @@ export function ProfilePage() {
 								d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
 							/>
 						</svg>
-					</div>
-
-					<div className="space-y-4">
-						{walletConnections.map((wallet, index) => (
-							<div
-								key={index}
-								className="flex items-center justify-between p-3 border border-gray-200 rounded-lg"
-							>
-								<div className="flex items-center space-x-3">
-									<div
-										className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ${
-											wallet.network === "Ethereum"
-												? "bg-blue-600"
-												: wallet.network === "Bitcoin"
-												? "bg-orange-500"
-												: "bg-purple-600"
-										}`}
-									>
-										{wallet.network.substring(0, 1)}
-									</div>
-									<div>
-										<p className="font-medium text-gray-900">
-											{wallet.status === "Connected"
-												? wallet.status
-												: "Not connected"}
-										</p>
-										<p className="text-sm text-gray-500">
-											{wallet.balance}
-										</p>
-									</div>
-								</div>
-								<div className="text-right">
-									<p className="text-sm text-gray-600 font-mono">
-										{wallet.address}
-									</p>
-									{wallet.status === "Not connected" && (
-										<button className="text-sm text-blue-600 hover:text-blue-700 mt-1">
-											Connect Solana Wallet
-										</button>
-									)}
-								</div>
-							</div>
-						))}
 					</div>
 
 					{/* RainbowKit Connect Button */}
